@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<div class="content">
+  <a data-pjax="/pjax/one.html">一</a>
+  <div id="pjax-container"></div>
+  <div id="loading" style="display:none;">888</div>
+</div>
+<script type="text/javascript" src="jslib/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="jslib/jquery.pjax.js"></script>
+<script type="text/javascript">
+  $(function(){
+    $(document).pjax('[data-pjax] a, a[data-pjax]', '#pjax-container');
+    $(document).on('pjax:send', function() {
+      $('#loading').show()
+    })
+    $(document).on('pjax:complete', function() {
+      $('#loading').hide()
+    })
+    $(document).on('pjax:timeout', function(event) {
+      // Prevent default timeout redirection behavior
+      event.preventDefault()
+    })
+  })
+</script>
+</body>
+</html>
