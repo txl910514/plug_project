@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<a href="" id="openApp">打开app</a>
+<script type="text/javascript">
+  window.onload=function(){
+    console.log(document.getElementById("openApp"));
+    window.screen.lockOrientation(['portrait-primary','portrait-secondary']);
+    alert(window.screen.orientation.type);
+/*    document.getElementById("openapp").onclick = function(e){
+      if(navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)){
+        window.location = "ewt2015://";
+      }
+      else if(navigator.userAgent.match(/android/i)){
+        var state=null;
+        try{
+          state = window.open("hhh://", "_blank");
+        }
+        catch(e){}
+        if(state){
+          window.close();
+        }
+        else{
+          location.href = "hhhhh";
+        }
+      }
+    }*/
+  }
+
+</script>
+</body>
+</html>
