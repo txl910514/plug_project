@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>回退页面</title>
+</head>
+<body>
+  <div id="content"></div>
+  <button id="button">按钮</button>
+  <button id="button1">回退</button>
+</body>
+<script type="text/javascript">
+  window.onload = function() {
+    var $content =document.getElementById("content");
+    var $button =document.getElementById("button");
+    var $button1 =document.getElementById("button1");
+    $button.onclick = function(){
+      $content.innerText= 'content';
+    };
+    $button1.onclick = function(){
+      console.log(window.location.hash);
+      console.log(window.location.host);
+      console.log(window.location.hostname);
+      console.log(window.location.href);
+      console.log(window.location.pathname);
+      console.log(window.location.port);
+      console.log(window.location.protocol);
+      console.log(window.location.search);
+      var url = window.location.protocol + "//"+window.location.host + window.location.pathname+"?u=3";
+      document.title = '回退';
+/*      var state = {
+        title: document.title,
+        url: url,
+      };
+      window.history.pushState(state, document.title, url);*/
+      window.location.search = 'u=3';
+    }
+  };
+
+</script>
+</html>
